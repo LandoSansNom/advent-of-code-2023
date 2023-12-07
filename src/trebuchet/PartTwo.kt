@@ -1,6 +1,4 @@
-package part_two
-
-import trebuchet.readFromFile
+package trebuchet
 
 
 fun main(){
@@ -18,17 +16,23 @@ fun main(){
             "6" to 6, "7" to 7, "8" to 8, "9" to 9, "0" to 0
         )
 
+
         for (digit in digits) {
+
+
             if (line.indexOf(digit.key) != -1) {
                 digitsFound.add(Pair(line.indexOf(digit.key), digit.value))
                 digitsFound.add(Pair(line.lastIndexOf(digit.key), digit.value))
+
             }
         }
 
         val sortedDigits = digitsFound.sortedBy { pair -> pair.first }
 
         sum += 10 * sortedDigits.first().second + sortedDigits.last().second
+
     }
+
     println(sum)
 
 }
