@@ -1,21 +1,20 @@
 package trebuchet
 
 import java.io.File
-import java.io.FileReader
 import java.io.InputStream
 
 
 fun main(){
     val fileContent = readFromFile("/Users/consultant/IdeaProjects/CodingChallenges/untitled/src/main/kotlin/Trebuchet.txt")
     var result = 0
-    var first = ""
-    var last = ""
+    var first = 0
+    var last = 0
 
     fileContent.forEach { line->
-        first = line.first{ it.isDigit() }.toString()
-        last = line.last{ it.isDigit() }.toString()
+        first = line.first{ it.isDigit() }.toString().toInt()
+        last = line.last{ it.isDigit() }.toString().toInt()
 
-        result += "$first$last".toInt()
+        result += 10 * first + last
     }
 
     println(result)
