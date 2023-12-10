@@ -5,19 +5,9 @@ import java.io.InputStream
 
 
 fun main(){
-    val fileContent = readFromFile("/Users/consultant/IdeaProjects/CodingChallenges/untitled/src/main/kotlin/Trebuchet.txt")
-    var result = 0
-    var first = 0
-    var last = 0
+    val fileContent = readFromFile("input your file path here")
+    println(sumOfCalibrationValues(fileContent))
 
-    fileContent.forEach { line->
-        first = line.first{ it.isDigit() }.toString().toInt()
-        last = line.last{ it.isDigit() }.toString().toInt()
-
-        result += 10 * first + last
-    }
-
-    println(result)
 
 }
 
@@ -28,4 +18,19 @@ fun readFromFile(filePath: String) : List<String> {
     inputStream.bufferedReader().forEachLine { lineList.add(it) }
 
     return lineList
+}
+
+fun sumOfCalibrationValues(input: List<String>): Int{
+    var result = 0
+    var first = 0
+    var last = 0
+
+    input.forEach { line->
+        first = line.first{ it.isDigit() }.toString().toInt()
+        last = line.last{ it.isDigit() }.toString().toInt()
+
+        result += 10 * first + last
+    }
+
+    return result
 }

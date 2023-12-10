@@ -2,10 +2,16 @@ package trebuchet
 
 
 fun main(){
-    val fileContent = readFromFile("/Users/consultant/Documents/Tasks/advent-of-code-2023/untitled/src/trebuchet/Trebuchet.txt")
+    val fileContent = readFromFile("input your file path here")
+    println(sumOfCalibrationValuesPartII(fileContent))
+
+
+}
+
+fun sumOfCalibrationValuesPartII(input: List<String>): Int{
 
     var sum = 0
-    fileContent.forEach { line ->
+    input.forEach { line ->
         // Index, Digit
         val digitsFound = mutableListOf<Pair<Int, Int>>()
 
@@ -33,7 +39,6 @@ fun main(){
 
     }
 
-    println(sum)
-
+    return sum
 }
 

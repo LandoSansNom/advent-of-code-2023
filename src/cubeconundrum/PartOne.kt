@@ -4,7 +4,7 @@ import trebuchet.readFromFile
 
 fun main(){
 
-    val gameList = readFromFile("/Users/consultant/Documents/Tasks/advent-of-code-2023/untitled/src/cubeconundrum/CubeConundrum.txt")
+    val gameList = readFromFile("input your file path here")
 
     println(sumOfIdOfPossibleGames(gameList,14,12,13))
 }
